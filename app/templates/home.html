@@ -1,0 +1,26 @@
+<!-- app/templates/home.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to My Personal Site</h1>
+    <p class="lead">This is a personal website built with Flask, showcasing my portfolio and blog.</p>
+    <hr class="my-4">
+    <p>Feel free to explore my projects and articles.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('portfolio.portfolio_list') }}" role="button">View Portfolio</a>
+    <a class="btn btn-secondary btn-lg" href="{{ url_for('blog.blog_list') }}" role="button">Read Blog</a>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Recent Projects</h2>
+        <p>Check out some of my latest work in my portfolio section.</p>
+        <a href="{{ url_for('portfolio.portfolio_list') }}" class="btn btn-outline-primary">View All Projects</a>
+    </div>
+    <div class="col-md-6">
+        <h2>Latest Articles</h2>
+        <p>Read my thoughts and tutorials on various topics in my blog.</p>
+        <a href="{{ url_for('blog.blog_list') }}" class="btn btn-outline-primary">View All Articles</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+/* app/static/css/main.css */
+/* Custom styles for your personal site */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 60px;
+}
+
+.jumbotron {
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: .3rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

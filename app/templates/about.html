@@ -1,0 +1,30 @@
+<!-- app/templates/about.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h1 class="mb-4">About Me</h1>
+        <p>Welcome to my personal website! I'm a developer passionate about creating meaningful web applications.</p>
+        
+        <h2 class="mt-4">Skills</h2>
+        <ul>
+            <li>Python and Flask</li>
+            <li>JavaScript and front-end frameworks</li>
+            <li>Database design and management</li>
+            <li>UI/UX design principles</li>
+        </ul>
+        
+        <h2 class="mt-4">Experience</h2>
+        <p>I've worked on various projects ranging from small personal websites to larger web applications. 
+        My focus is on creating clean, efficient, and user-friendly applications.</p>
+        
+        <h2 class="mt-4">Education</h2>
+        <p>I hold a degree in Computer Science and continue to expand my knowledge through online courses and hands-on projects.</p>
+        
+        <div class="mt-5">
+            <a href="{{ url_for('main.contact') }}" class="btn btn-primary">Contact Me</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

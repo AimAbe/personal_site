@@ -1,0 +1,29 @@
+<!-- app/templates/portfolio/detail.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card mb-4">
+            {% if project.image_url %}
+                <img src="{{ project.image_url }}" class="card-img-top" alt="{{ project.title }}">
+            {% endif %}
+            <div class="card-body">
+                <h1 class="card-title">{{ project.title }}</h1>
+                <p class="text-muted">Added on {{ project.date_added.strftime('%B %d, %Y') }}</p>
+                <div class="mt-4">
+                    {{ project.description|safe }}
+                </div>
+                {% if project.project_url %}
+                <div class="mt-4">
+                    <a href="{{ project.project_url }}" class="btn btn-primary" target="_blank">View Project</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div>
+            <a href="{{ url_for('portfolio.portfolio_list') }}" class="btn btn-outline-secondary">Back to Portfolio</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+<!-- app/templates/portfolio/create.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h1 class="mb-4">Add New Project</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+                {{ form.title.label(class="form-label") }}
+                {{ form.title(class="form-control") }}
+                {% if form.title.errors %}
+                    {% for error in form.title.errors %}
+                        <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                {{ form.description.label(class="form-label") }}
+                {{ form.description(class="form-control", rows=5) }}
+                {% if form.description.errors %}
+                    {% for error in form.description.errors %}
+                        <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                {{ form.image_url.label(class="form-label") }}
+                {{ form.image_url(class="form-control") }}
+                {% if form.image_url.errors %}
+                    {% for error in form.image_url.errors %}
+                        <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                {{ form.project_url.label(class="form-label") }}
+                {{ form.project_url(class="form-control") }}
+                {% if form.project_url.errors %}
+                    {% for error in form.project_url.errors %}
+                        <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                {{ form.submit(class="btn btn-primary") }}
+                <a href="{{ url_for('portfolio.portfolio_list') }}" class="btn btn-outline-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
